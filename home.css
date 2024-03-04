@@ -46,9 +46,13 @@ cite{
 }
 
 #main{
+    display: flex;
+    position: relative;
+    flex-direction: column;
     position: -ms-device-fixed;
     background-color: lightsalmon;
     margin-top: 7vw;
+    margin-bottom: 0;
     padding-bottom: 1vw;
     text-align: center;
 }
@@ -76,6 +80,18 @@ cite{
 
 #currentList > ul li{
     font-size: 30px;
+    text-align: left;
+    padding-left: 150px;
+    border-style: solid;
+    border-width: 2px 2px 2px 0px;
+    border-collapse: collapse;
+}
+
+ul.scrollable-list {
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Optional: Add padding for better styling */
 }
 
 
