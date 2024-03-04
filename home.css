@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    margin: 0;
+    position: fixed;
+}
+h2{
+    font-size: 2vw;
+}
+nav ul{
+    list-style-type: none;
+    background-color: lightsalmon;
+    margin:0;
+    padding: 0;
+    overflow:hidden;
+}
+
+nav li{
+    float: left;
+    width: 15%;
+    border-left: 1px solid black;
+}
+
+nav li a{
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+cite{
+    font-family: Arial;
+    font-size: 30px;
+}
+
+#homeheader{
+    text-align: center;
+    background-color: #bebebe;
+    margin-top: 0vw;
+    padding-top: 1vw;
+    color: white;
+}
+
+#main{
+    position: -ms-device-fixed;
+    background-color: lightsalmon;
+    margin-top: 7vw;
+    padding-bottom: 1vw;
+    text-align: center;
+}
+
+
+
+#MakeList > input{
+    border-radius: 2vw;
+    font-size: 2vw;
+    left:10px;
+}
+
+#currentList{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 0px;
+}
+
+#currentList > ul{
+    margin-top: 50px;
+    list-style-type: none;
+    text-align: center;
+    background-color: lightsteelblue;
+}
+
+#currentList > ul li{
+    font-size: 30px;
+}
+
+
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+}
+
+footer p {
+    font-family: Arial;
+}
+footer  a:link, a:visited, a:active{
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: chartreuse;
+}
