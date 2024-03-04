@@ -45,16 +45,14 @@ cite{
     color: white;
 }
 
-#main{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    position: -ms-device-fixed;
+#main {
+   
     background-color: lightsalmon;
     margin-top: 7vw;
     margin-bottom: 0;
     padding-bottom: 1vw;
     text-align: center;
+    min-height: 100vh; /* Added to ensure the div takes at least the full height of the viewport */
 }
 
 
