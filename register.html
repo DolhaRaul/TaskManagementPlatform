@@ -15,7 +15,7 @@
         <li><a href="home.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
-        <li><a href="#Home">About</a></li>
+        <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
@@ -24,17 +24,21 @@
         <h1>Register</h1>
         <form action="/#">
             <label for="fname">Enter your first name: </label>
-            <input type="text" id="fname"  name="fname" placeholder="First name here..."
+            <input type="text" id="fname"  name="fname" placeholder="Mihai"
             pattern="[a-zA-Z]+" required>
             <br><br>
             <label for="lname">Enter your last name:</label>
-            <input type="text "id="lname" name="lname" placeholder="Last name here..."
+            <input type="text "id="lname" name="lname" placeholder="Pop"
             pattern="[a-zA-Z]+" required>
             <br><br>
-            <label for="email">Enter email here:</label>
-            <input type="text "id="email" name="email" placeholder="Last name here..."
-                   pattern=".+@.+" required>
-            <p>Choose gender</p>
+            <label for="email">Enter email here, based on the pattern:</label>
+            <input type="text "id="email" name="email"
+                   placeholder="mihaipop@yahoo.com" pattern=".+@.+" required>
+            <br><br>
+            <label for="passw">Enter password here(min 8 characters)</label>
+            <input type="password" id="passw" name="passw" required minlength="8">
+            <br>
+            <p style="display: inline-block">Choose gender:</p>
             <label for="male_gender">Male</label>
             <input type="radio" id="male_gender" name="gender" value="Male">
             <label for="female_gender">Female</label>
@@ -42,6 +46,11 @@
         </form>
     </div>
 </main>
-</body>
 
+<footer>
+    <p>Ownership: Dolha Raul</p>
+    <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
+</footer>
+
+</body>
 </html>

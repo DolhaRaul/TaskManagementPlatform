@@ -4,6 +4,7 @@
 
 html, body {
     height: 100%;
+    background-color: lightsalmon;
     margin: 0;
 }
 
@@ -26,12 +27,14 @@ h3 {
 
 
 #loginDiv {
-    background-color: #7ad9ff;
+    background-color: lightcyan;
     justify-content: center;
     border-style: outset;
-    height: 100%;
-    width: 50%;
+    border-radius: 30px;
+    height: 50%;
+    width: 40%;
     margin: 0 auto;
+    margin-top: 150px;
 }
 
 label {
@@ -42,17 +45,24 @@ label {
 }
 
 input {
-
     align-content: center;
     border: 2px solid black;
     border-radius: 15px;
     padding-left: 1vw;
-    display: block;
+    border-style: outset;
+    border-radius: 15px;
+    margin-left: 25%;
+
+}
+
+#loginButton {
+    width: 50%;
+    margin-top: 45px;
+    margin-left: 20%;
 }
 
 #imgContainer {
     width: 50%;
-    background-color: #7ad9ff;
     border-style: outset;
 }
 
@@ -74,4 +84,18 @@ img {
 #registerSection > a {
     text-align: center;
     border-radius: 15px;
+}
+
+footer {
+    background-color: #7ad9ff;
+    border-style: inset;
+    padding: 10px;
+    text-align: center;
+    font-size: 1vw;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
 }
