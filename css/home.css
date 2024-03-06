@@ -2,33 +2,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 
 #h2ListMarker{
     font-size: 2vw;
 
-}
-nav ul{
-    list-style-type: none;
-    background-color: lightsalmon;
-    margin:0;
-    padding: 0;
-    overflow:hidden;
-}
-
-nav li{
-    float: left;
-    width: 25%;
-    border-style:outset;
-    border-bottom: 2px solid black;
-}
-
-nav li a{
-    display: block;
-    color:black;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 2vw;
 }
 
 cite{

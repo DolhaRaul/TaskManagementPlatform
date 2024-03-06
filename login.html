@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav_links.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
-    <meta http-equiv="refresh" content="10">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Login ToDoList</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -13,17 +14,34 @@
     <ul>
         <li><a href="home.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
-        <li><a href="#Home">Register</a></li>
+        <li><a href="register.html">Register</a></li>
         <li><a href="#Home">About</a></li>
     </ul>
 </nav>
-<header></header>
 <div id="container">
     <div id="loginDiv">
-        <form>
+        <h1>Login</h1>
+        <form action="/#">
             <label for="email">Email</label>
             <input type="email" id="email" name="email">
+            <label for="passw">Password</label>
+            <input type="password" id="passw" name="passw">
+            <input type="submit" value="Sign In">
         </form>
+    </div>
+    <div id="imgContainer">
+        <picture>
+            <img src="/images/todofavico.png" alt="todo_img">
+        </picture>
+        <h2>
+            <q><i>One thing a disorganised person does in a certain
+            amount of time is the time needed to do 100 things for an
+            organised person</i></q>
+        </h2>
+        <div id="registerSection">
+            <h3>Do not have an account yet? Creare an account here!</h3>
+            <a href="register.html"><img src = "/images/register_img.png" alt="Register buttom"></a>
+        </div>
     </div>
 </div>
 </body>

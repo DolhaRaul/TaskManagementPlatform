@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/nav_links.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Register ToDoList</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="#Home">About</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/#">
+            <label for="fname">Enter your first name: </label>
+            <input type="text" id="fname"  name="fname" placeholder="First name here..."
+            pattern="[a-zA-Z]+" required>
+            <br><br>
+            <label for="lname">Enter your last name:</label>
+            <input type="text "id="lname" name="lname" placeholder="Last name here..."
+            pattern="[a-zA-Z]+" required>
+            <br><br>
+            <label for="email">Enter email here:</label>
+            <input type="text "id="email" name="email" placeholder="Last name here..."
+                   pattern=".+@.+" required>
+            <p>Choose gender</p>
+            <label for="male_gender">Male</label>
+            <input type="radio" id="male_gender" name="gender" value="Male">
+            <label for="female_gender">Female</label>
+            <input type="radio" id="female_gender" name="gender" value="Female">
+        </form>
+    </div>
+</main>
+</body>
+
+</html>
