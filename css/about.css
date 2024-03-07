@@ -2,8 +2,64 @@
     box-sizing: border-box;
 }
 
-html, body {
+html, body{
     height: 100%;
     background-color: lightsalmon;
     margin: 0;
+}
+
+#profileSection {
+    background-color: #A07AFF;
+    width: 100%;
+    margin: 0;
+}
+
+/*#labelForImgSelector {*/
+/*    float: right;*/
+/*    margin-right: 350px;*/
+/*}*/
+
+/*#profileImageSelector {*/
+/*    float: right;*/
+/*    margin-top: 25px;*/
+/*    width: 50%;*/
+/*}*/
+
+#mainContent {
+    display: flex;
+}
+
+div.aboutUs {
+    height: 450px;
+    width: 50%;
+    background: #7affa0 ;
+    border-style: groove;
+}
+
+#contentSpecifier {
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    margin-left: 45%;
+    margin-top: 12%;
+    font-size: 3.4vw;
+    text-align: center;
+}
+
+#contentAboutOwner {
+    margin-left: 35px;
+    margin-top: 35px;
+    width: 90%;
+    height: 80%;
+    margin-bottom: 10px;
+}
+
+td, th {
+    background-color: white;
+    border-collapse: collapse;
+    text-align: center;
+    height: 30px;
+}
+
+#contentAboutOwner > tr:nth-child(odd){
+   background-color: #888;
 }

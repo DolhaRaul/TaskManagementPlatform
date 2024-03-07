@@ -33,8 +33,7 @@ h3 {
     border-radius: 30px;
     height: 50%;
     width: 40%;
-    margin: 0 auto;
-    margin-top: 150px;
+    margin: 150px auto 0;
 }
 
 label {
@@ -45,13 +44,10 @@ label {
 }
 
 input {
-    align-content: center;
-    border: 2px solid black;
     border-radius: 15px;
     padding-left: 1vw;
     border-style: outset;
-    border-radius: 15px;
-    margin-left: 25%;
+
 
 }
 
@@ -96,6 +92,5 @@ footer {
     position: absolute;
     bottom: 0;
     left: 0;
-
     width: 100%;
 }
