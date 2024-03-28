@@ -3,7 +3,9 @@
 <head>
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/nav_links.css">
+    <link rel="stylesheet" href="css/footer.css">
     <meta charset="UTF-8">
+    <script src="javascript/login_register_validation.js"></script>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Register ToDoList</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -14,7 +16,7 @@
     <ul>
         <li><a href="home.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
+        <li><a class="active" href="register.html">Register</a></li>
         <li><a href="about_owner.html">About owner</a></li>
     </ul>
 </nav>
@@ -22,7 +24,7 @@
 <main>
     <div class="container">
         <h1>Register</h1>
-        <form action="/#">
+        <form name="register_form" action="/#">
             <label for="fname">Enter your first name: </label>
             <input type="text" id="fname"  name="fname" placeholder="Mihai"
             pattern="[a-zA-Z]+" required>
@@ -45,12 +47,12 @@
             <input type="radio" id="female_gender" name="gender" value="Female">
             <br>
             <input type="submit" value="Sign up"
-                   style="margin-left: 45%; height: 25px">
+                   style="margin-left: 45%; height: 25px" onclick="validate_register()">
         </form>
     </div>
 </main>
 
-<footer>
+<footer style="position: fixed; margin-bottom: 0">
     <p>Ownership: Dolha Raul</p>
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
 </footer>

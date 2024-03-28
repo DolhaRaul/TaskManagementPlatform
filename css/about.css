@@ -6,6 +6,11 @@ html, body{
     height: 100%;
     background-color: lightsalmon;
     margin: 0;
+    overflow-y: hidden;
+}
+
+main {
+    margin-bottom: 0;
 }
 
 #profileSection {
@@ -14,17 +19,6 @@ html, body{
     margin: 0;
 }
 
-/*#labelForImgSelector {*/
-/*    float: right;*/
-/*    margin-right: 350px;*/
-/*}*/
-
-/*#profileImageSelector {*/
-/*    float: right;*/
-/*    margin-top: 25px;*/
-/*    width: 50%;*/
-/*}*/
-
 #mainContent {
     display: flex;
 }
@@ -32,7 +26,6 @@ html, body{
 div.aboutUs {
     height: 450px;
     width: 50%;
-    background: #7affa0 ;
     border-style: groove;
 }
 

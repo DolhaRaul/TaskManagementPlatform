@@ -1,14 +1,14 @@
 footer {
-    background-color: #7ad9ff;
-    border-bottom: 0px;
+    background-image: linear-gradient(lightsalmon, #7ad9ff);
+    /*background-color: #7ad9ff;*/
+    border-bottom: 0;
     border-style: inset;
     padding: 10px;
     text-align: center;
     font-size: 1vw;
     color: black;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    left: 0;
     display: block;
     width: 100%;
 }
@@ -22,5 +22,5 @@ footer  a:link, a:visited, a:active{
 }
 
 footer a:hover{
-    color: chartreuse;
+    color: whitesmoke;
 }

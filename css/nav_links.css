@@ -21,3 +21,12 @@ nav li a{
     text-decoration: none;
     font-size: 2vw;
 }
+
+nav li a:hover:not(.active){
+    background-color: lightslategray;
+    transition: 0.5s;
+}
+
+nav li a.active {
+    background-color: lightgreen;
+}

@@ -5,6 +5,7 @@
 html, body {
     height: 100%;
     background-color: lightsalmon;
+    overflow-y: hidden;
     margin: 0;
 }
 
@@ -47,7 +48,18 @@ input {
     border-radius: 15px;
     padding-left: 1vw;
     border-style: outset;
+}
 
+input:invalid {
+    background-color: lightcoral;
+    transition: 0.5s;
+}
+form p {
+    text-align: center;
+    color: lightcoral;
+    visibility: hidden;
+}
+#passw:invalid {
 
 }
 
@@ -82,15 +94,3 @@ img {
     border-radius: 15px;
 }
 
-footer {
-    background-color: #7ad9ff;
-    border-style: inset;
-    padding: 10px;
-    text-align: center;
-    font-size: 1vw;
-    color: black;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
