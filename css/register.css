@@ -2,8 +2,7 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
     background-color: lightsalmon;
     margin: 0;
 }

@@ -1,16 +1,16 @@
 footer {
     background-image: linear-gradient(lightsalmon, #7ad9ff);
-    /*background-color: #7ad9ff;*/
     border-bottom: 0;
     border-style: inset;
     padding: 10px;
     text-align: center;
     font-size: 1vw;
     color: black;
-    position: relative;
+    position: absolute;
     bottom: 0;
     display: block;
     width: 100%;
+    max-height: 350px;
 }
 
 footer p {
