@@ -27,11 +27,14 @@
             <label for="email">Email </label>
             <input type="email" id="email" name="email" title="something@.com"
                    placeholder="xenya_god@com..." pattern=".+@.+"
-                   style="margin-left: 25%" required>
+                   style="margin-left: 25%" required oninput="validate_email()">
+            <span>&#9989;</span>
             <br><br>
             <label for="passw">Password</label>
             <input type="password" id="passw" name="passw" required minlength="8"
-                   title="At least 8 characters" style="margin-left: 21%">
+                   title="At least 8 characters" style="margin-left: 21%"
+                    oninput="validate_password()">
+            <span>&#9989;</span>
             <p>The password should containt AT LEAST 8 characters</p>
             <input type="submit" id="loginButton" value="Sign In"
                    style="height: 35px; margin-left: 25%" onclick="validate_login()">

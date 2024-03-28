@@ -27,12 +27,12 @@ cite{
 }
 
 #main {
-   
     background-color: lightsalmon;
     margin-top: 7vw;
     margin-bottom: 0;
     padding-bottom: 1vw;
     text-align: center;
+    border-bottom: none;
     min-height: 100vh; /* Added to ensure the div takes at least the full height of the viewport */
 }
 
@@ -98,17 +98,3 @@ ul.scrollable-list {
     margin-right: 15%;
 }
 
-
-footer {
-    background-color: #7ad9ff;
-    border-bottom: 0;
-    border-style: inset;
-    padding: 10px;
-    text-align: center;
-    font-size: 1.35vw;
-    color: black;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-}

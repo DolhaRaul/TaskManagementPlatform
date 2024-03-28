@@ -54,13 +54,13 @@ input:invalid {
     background-color: lightcoral;
     transition: 0.5s;
 }
+span {
+    visibility: hidden;
+}
 form p {
     text-align: center;
     color: lightcoral;
     visibility: hidden;
-}
-#passw:invalid {
-
 }
 
 #loginButton {
@@ -71,7 +71,8 @@ form p {
 
 #imgContainer {
     width: 50%;
-    border-style: outset;
+    height: 100%;
+    border-left: outset;
 }
 
 img {

@@ -27,25 +27,44 @@
         <form name="register_form" action="/#">
             <label for="fname">Enter your first name: </label>
             <input type="text" id="fname"  name="fname" placeholder="Mihai"
-            pattern="[a-zA-Z]+" required>
+            pattern="[a-zA-Z]+" required oninput="validate_fname()">
+            <span>&#9989;</span>
             <br><br>
             <label for="lname">Enter your last name:</label>
             <input type="text" id="lname" name="lname" placeholder="Pop"
-            pattern="[a-zA-Z]+" required>
+            pattern="[a-zA-Z]+" required oninput="validate_lname()">
+            <span>&#9989;</span>
             <br><br>
             <label for="email">Enter email here, based on the pattern:</label>
             <input type="text" id="email" name="email"
-                   placeholder="mihaipop@yahoo.com" pattern=".+@.+" required>
+                   placeholder="mihaipop@yahoo.com" pattern=".+@.+" required
+                    oninput="validate_email()">
+            <span>&#9989;</span>
             <br><br>
             <label for="passw">Enter password here(min 8 characters)</label>
-            <input type="password" id="passw" name="passw" required minlength="8">
+            <input type="password" id="passw" name="passw" required minlength="8"
+            oninput="validate_password()">
+            <span>&#9989;</span>
             <br>
             <p style="display: inline-block">Choose gender:</p>
             <label for="male_gender">Male</label>
-            <input type="radio" id="male_gender" name="gender" value="Male">
+            <input type="radio" id="male_gender" name="gender" value="Male"
+                onclick="validate_gender()">
             <label for="female_gender">Female</label>
-            <input type="radio" id="female_gender" name="gender" value="Female">
+            <input type="radio" id="female_gender" name="gender" value="Female"
+                onclick="validate_gender()">
             <br>
+            <label for="city">Choose City: </label>
+            <select name="city" id="city" onchange="region_pick()">
+                <option value="Bucuresti">Bucuresti</option>
+                <option value="Washington">Washington</option>
+                <option value="Beijing">Beijing</option>
+                <option value="Rome">Rome</option>
+            </select>
+            <label>Country: </label>
+            <input disabled value="dwedf" name="country" id="country">
+            <span>&#9989;</span>
+            <br><br>
             <input type="submit" value="Sign up"
                    style="margin-left: 45%; height: 25px" onclick="validate_register()">
         </form>
