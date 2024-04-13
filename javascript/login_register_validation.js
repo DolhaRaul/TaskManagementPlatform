@@ -1,4 +1,3 @@
-
 function validate_email(){
     let email_input = document.getElementById("email");
     let email_status = email_input.checkValidity();
@@ -69,11 +68,35 @@ function validate_gender () {
     return false;
 }
 
+/**
+ * Filter the cities in the select option THAT start with the text
+ * introduced in the user in the input field, with the label
+ * "Filter cities to pick here:"
+ */
+function filter_cities() {
+    $(document).ready(function() {
+        var filterValue = $("#cityFilter").val().toLowerCase(); // Get the filter value and convert it to lowercase
+        $("#city").children().hide() // Hide all options initially
+            .filter(function() {
+                return $(this).text().toLowerCase().startsWith(filterValue); // Filter options based on text content
+            })
+            .show(); // Show filtered options
+    });
+}
+
+/**
+ * @returns {boolean}
+ * Pick the city from the list of options predefined and automatically
+ * completes the country associated
+ */
 function region_pick() {
-    let city_pick = document.getElementById("city").value;
-    const capitals = ["Bucuresti", "Washington", "Beijing", "Rome"]
-    const countries_associated = ["Romania", "United States", "China", "Italy"]
-    let pos_capital_picked = capitals.indexOf(city_pick);
+    let city_picker = document.getElementById("city")
+    let city_pick_value = city_picker.value;
+    let capitals = [...city_picker.children];
+    capitals = capitals.map(city_option => city_option.value);
+    const countries_associated = ["Romania", "United States", "China", "Italy"
+    ,"Czech Republic", "Moldova", "Poland", "Anglia", "Danemarca", "Germania" ]
+    let pos_capital_picked = capitals.indexOf(city_pick_value);
     let tick_mark = document.getElementById("country").nextElementSibling;
     if(pos_capital_picked === -1) {
         tick_mark.style.visibility = "hidden";

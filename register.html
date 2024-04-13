@@ -55,15 +55,24 @@
                 onclick="validate_gender()">
             <br>
             <label for="city">Choose City: </label>
-            <select name="city" id="city" onchange="region_pick()">
+            <select size="5" name="city" id="city" onchange="region_pick()">
                 <option value="Bucuresti">Bucuresti</option>
                 <option value="Washington">Washington</option>
                 <option value="Beijing">Beijing</option>
                 <option value="Rome">Rome</option>
+                <option value="Praga">Praga</option>
+                <option value="Chisinau">Chisinau</option>
+                <option value="Varsovia">Varsovia</option>
+                <option value="Londra">Londra</option>
+                <option value="Copenhaga">Copenhaga</option>
+                <option value="Berlin">Berlin</option>
             </select>
             <label>Country: </label>
             <input disabled value="Pick a city" name="country" id="country">
             <span>&#9989;</span>
+            <br><br>
+            <label for="cityFilter">Filter cities to pick here: </label>
+            <input id="cityFilter" type="text" onkeyup="filter_cities()">
             <br><br>
             <input type="submit" value="Sign up"
                    style="margin-left: 45%; height: 25px" onclick="validate_register()">
@@ -76,5 +85,12 @@
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
 </footer>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Include the Select2 JS file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </body>
 </html>

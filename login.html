@@ -39,26 +39,72 @@
             <input type="submit" id="loginButton" value="Sign In"
                    style="height: 35px; margin-left: 25%" onclick="validate_login()">
         </form>
-    </div>
-    <div id="imgContainer">
-        <picture>
-            <img src="images/todofavico.png" alt="todo_img">
-        </picture>
         <h2>
             <q><i>One thing a disorganised person does in a certain
-            amount of time is the time needed to do 100 things for an
-            organised person</i></q>
+                amount of time is the time needed to do 100 things for an
+                organised person</i></q>
         </h2>
-        <div id="registerSection">
-            <h3>Do not have an account yet? Create an account here!</h3>
-            <a href="register.html"><img src = "images/register_img.png" alt="Register buttom"></a>
-        </div>
+    </div>
+    <div id="imgContainer">
+        <picture title="Click this image to go to the register section...">
+            <a href="register.html"><img src="images/todofavico.png" alt="todo_img"></a>
+        </picture>
+        <table id="stats">
+            <caption>Statistics about Users</caption>
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>Number of Users</th>
+            </tr>
+            <tr>
+                <td>Romania</td>
+                <td>Bucuresti</td>
+                <td>114</td>
+            </tr>
+            <tr>
+                <td>United States</td>
+                <td>Washington</td>
+                <td>253</td>
+            </tr>
+            <tr>
+                <td>China</td>
+                <td>Beijing</td>
+                <td>2343</td>
+            </tr>
+            <tr>
+                <td>Italy</td>
+                <td>Rome</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Czech Republic</td>
+                <td>Praga</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td>Moldova</td>
+                <td>Chisinau</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>Poland</td>
+                <td>Varsovia</td>
+                <td>167</td>
+            </tr>
+        </table>
+<!--        <div id="registerSection">-->
+<!--            <h3>Do not have an account yet? Create an account here!</h3>-->
+<!--            <a href="register.html"><img src = "images/register_img.png" alt="Register buttom"></a>-->
+<!--        </div>-->
     </div>
 
-<!--    <footer>-->
-<!--        <p>Ownership: Dolha Raul</p>-->
-<!--        <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>-->
-<!--    </footer>-->
+<script src="javascript/table_manipulation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function (){
+        sort_by_columns();
+    })
+</script>
 </div>
 </body>
 </html>
