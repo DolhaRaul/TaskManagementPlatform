@@ -20,12 +20,30 @@ main {
     margin: 0;
 }
 
+#imageContainer {
+    background-color: whitesmoke;
+    display: inline-block;
+    border-style: groove;
+    border-radius: 150px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+#imageContainer > i{
+    text-align: center;
+}
+
 #mainContent {
     display: flex;
 }
 
+h2 {
+    display: inline-block;
+}
+
 div.aboutUs {
-    height: 450px;
+    height: 550px;
     width: 50%;
     border-style: groove;
 }
@@ -39,6 +57,10 @@ div.aboutUs {
     text-align: center;
 }
 
+p {
+    margin-left: 35px;
+}
+
 #contentAboutOwner {
     margin-left: 35px;
     margin-top: 35px;
@@ -47,6 +69,36 @@ div.aboutUs {
     margin-bottom: 10px;
 }
 
+label {
+    margin-left: 35px;
+}
+
+label > .searchStyle {
+    margin-left: 15px;
+}
+
+.searchStyle + label{
+    margin-left: 0;
+}
+
+.searchStyle:hover + label{
+    transition-duration: 0.5s;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.searchStyle:checked + label {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+input {
+    margin-top: 10px;
+    margin-left: 35px;
+}
+table{
+    overflow: scroll;
+}
 td, th {
     background-color: white;
     border-collapse: collapse;
@@ -61,4 +113,29 @@ td, th {
 footer {
     flex-shrink: 0; /* Prevent the footer from shrinking */
     padding: 20px; /* Add padding for better readability */
+}
+
+#imgProfilePick {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    left: 5px;
+    margin:0;
+    padding: 0;
+}
+
+#imgProfilePick li {
+    display: inline-block;
+    background-color: whitesmoke;
+    margin:0;
+    padding: 0;
+}
+
+button {
+    margin-left: 50px;
+    margin-right: 250px;
+    display: inline-block;
+    font-family: Verdana, serif;
+    height: 50px;
+    box-sizing: border-box;
 }

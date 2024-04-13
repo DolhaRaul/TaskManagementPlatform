@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/nav_links.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>About</title>
@@ -23,12 +24,16 @@
 <section>
     <div id="profileSection">
         <h2 style="display: inline-block">Choose my profile picture</h2>
-        <span>
-            <!-- AICI TREBUIE SA FACI UN FEL DE LISTA, DAR NU IESE!!!-->
-<!--            <select id="profileImageSelector">-->
-<!--                <option value="Happy"><img src="images/favicon.ico"></option>-->
-<!--            </select>-->
-        </span>
+        <ul id="imgProfilePick">
+            <li><i class="material-icons">cloud</i></li>
+            <li><i class="material-icons">favorite</i></li>
+            <li><i class="material-icons">attachment</i></li>
+            <li><i class="material-icons">computer</i></li>
+            <li><i class="material-icons">traffic</i></li>
+        </ul>
+        <button onclick="limit_profile_pictures()">Toggle View more profile pictures</button>
+        <h2>My Profile Image</h2>
+        <div class="material-icons" id="imageContainer">ceva</div>
     </div>
 </section>
 
@@ -38,6 +43,16 @@
             <h1 id="contentSpecifier">About owner</h1>
         </div>
         <div class="aboutUs">
+            <p style="display: inline-block">Pick search type here(default is case insensitive): </p>
+            <input class="searchStyle" id="searchSensitive" type="radio"
+                   value="case_sensitive" name="searchType">
+            <label for="searchSensitive">Case Sensitive</label>
+            <input class="searchStyle" id="searchInsensitive" type="radio" value="case_insensitive"
+                   name="searchType">
+            <label for="searchInsensitive">Case Insensitive</label>
+            <br>
+            <label for="textToFind">Enter text to search here</label> <br>
+            <input id="textToFind" type="text" onkeyup="text_search()" placeholder="Text to find...">
             <table id="contentAboutOwner">
                 <tr>
                     <th>FirstName</th>
@@ -50,7 +65,8 @@
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td colspan="2">rauldolha2002@yahoo.com</td>
+                    <td>rauldolha2002@yahoo.com</td>
+                    <td>sDarkness@gmail.com</td>
                 </tr>
                 <tr>
                     <th>Gender</th>
@@ -96,6 +112,19 @@
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
 </footer>
 
-
+<script src="javascript/profile_image_picker.js"></script>
+<script src="javascript/table_manipulation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (){
+        sorting_by_headers();
+    })
+    document.addEventListener("DOMContentLoaded", function (){
+        limit_profile_pictures();
+    });
+    document.addEventListener("DOMContentLoaded", function (){
+        profile_picture_choose();
+    })
+</script>
 </body>
 </html>
