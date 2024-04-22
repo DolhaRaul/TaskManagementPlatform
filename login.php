@@ -1,9 +1,15 @@
+<?php
+include_once 'php/Role.php';
+include_once 'php/pages_config.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/nav_links.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Login ToDoList</title>
@@ -14,16 +20,22 @@
 <body>
 <nav>
     <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a class="active" href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="about_owner.html">About owner</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a class="active" href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+        <li><a href="about_owner.php">About owner</a></li>
+        <?php
+            if(!empty($_SESSION['user_email']) && $_SESSION['user_email'] === Role::ADMIN_EMAIL) {
+                echo "<script>$('nav li').css('width', '20%')</script>";
+                echo "<li style='width: 20%'><a href='users.php'>Users page</a></li>";
+            }
+        ?>
     </ul>
 </nav>
 <div id="container">
     <div id="loginDiv">
         <h1>Login</h1>
-        <form name="login_form" action="/#">
+        <form name="login_form" method="POST" action="/php/login_user.php">
             <label for="email">Email </label>
             <input type="email" id="email" name="email" title="something@.com"
                    placeholder="xenya_god@com..." pattern=".+@.+"
@@ -47,7 +59,7 @@
     </div>
     <div id="imgContainer">
         <picture title="Click this image to go to the register section...">
-            <a href="register.html"><img src="images/todofavico.png" alt="todo_img"></a>
+            <a href="register.php"><img src="images/todofavico.png" alt="todo_img"></a>
         </picture>
         <table id="stats">
             <caption>Statistics about Users</caption>
@@ -94,7 +106,7 @@
         </table>
 <!--        <div id="registerSection">-->
 <!--            <h3>Do not have an account yet? Create an account here!</h3>-->
-<!--            <a href="register.html"><img src = "images/register_img.png" alt="Register buttom"></a>-->
+<!--            <a href="register.php"><img src = "images/register_img.png" alt="Register buttom"></a>-->
 <!--        </div>-->
     </div>
 
@@ -104,6 +116,16 @@
     $(document).ready(function (){
         sort_by_columns();
     })
+</script>
+<script>let checkWindowClosed = setInterval(function() {
+            if (!window) {
+                clearInterval(checkWindowClosed);
+                // Make an AJAX call to a PHP script to destroy the session
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'php/destroy_session.php', true);
+                xhr.send();
+            }
+        }, 1000); // Check every second
 </script>
 </div>
 </body>

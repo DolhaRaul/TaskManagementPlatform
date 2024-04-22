@@ -1,9 +1,15 @@
+<?php
+include_once 'php/Role.php';
+include_once 'php/pages_config.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/nav_links.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <script src="javascript/login_register_validation.js"></script>
     <meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -14,17 +20,23 @@
 <body>
 <nav>
     <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a class="active" href="register.html">Register</a></li>
-        <li><a href="about_owner.html">About owner</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a class="active" href="register.php">Register</a></li>
+        <li><a href="about_owner.php">About owner</a></li>
+        <?php
+        if(!empty($_SESSION['user_email']) && $_SESSION['user_email'] === Role::ADMIN_EMAIL) {
+            echo "<script>$('nav li').css('width', '20%')</script>";
+            echo "<li style='width: 20%'><a href='users.php'>Users page</a></li>";
+        }
+        ?>
     </ul>
 </nav>
 
 <main>
     <div class="container">
         <h1>Register</h1>
-        <form name="register_form" action="/#">
+        <form method="POST" name="register_form" action="/php/register_user.php">
             <label for="fname">Enter your first name: </label>
             <input type="text" id="fname"  name="fname" placeholder="Mihai"
             pattern="[a-zA-Z]+" required oninput="validate_fname()">
@@ -75,7 +87,7 @@
             <input id="cityFilter" type="text" onkeyup="filter_cities()">
             <br><br>
             <input type="submit" value="Sign up"
-                   style="margin-left: 45%; height: 25px" onclick="validate_register()">
+                   style="margin-left: 45%; height: 25px" onclick="return validate_register()">
         </form>
     </div>
 </main>
@@ -85,12 +97,22 @@
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
 </footer>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
 <!-- Include jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Include the Select2 JS file -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>let checkWindowClosed = setInterval(function() {
+        if (!window) {
+            clearInterval(checkWindowClosed);
+            // Make an AJAX call to a PHP script to destroy the session
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'php/destroy_session.php', true);
+            xhr.send();
+        }
+    }, 1000); // Check every second
+</script>
 </body>
 </html>

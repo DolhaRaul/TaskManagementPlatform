@@ -24,18 +24,18 @@ function text_search() {
 function sort_by_columns() {
     $(document).ready(function() {
         $('#stats th').click(function() {
-            var table = $(this).closest('table');
-            var rows = table.find('tr:gt(0)').toArray().sort(compareRows($(this).index()));
+            let table = $(this).closest('table');
+            let rows = table.find('tr:gt(0)').toArray().sort(compareRows($(this).index()));
             this.asc = !this.asc;
             if (!this.asc) { rows = rows.reverse(); }
-            for (var i = 0; i < rows.length; i++) { table.append(rows[i]); }
+            for (let i = 0; i < rows.length; i++) { table.append(rows[i]); }
         });
     });
 }
 
 function compareRows(index) {
     return function(a, b) {
-        var valA = getCellValue(a, index), valB = getCellValue(b, index);
+        let valA = getCellValue(a, index), valB = getCellValue(b, index);
         return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB);
     };
 }

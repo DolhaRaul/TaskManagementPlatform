@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightsalmon;
+    margin: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    background-color: honeydew;
+    display: inline-block;
+    margin-left: 48%;
+    text-align: center;
+    border-radius: 35px;
+    padding: 8px;
+}
+
+table {
+    background-color: honeydew;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+}
+
+td > button {
+    width: 100%;
+    font-size: 100%;
+    border: 2px inset black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td > .update:hover{
+    transition: 0.5s;
+    background-color: #04AA6D;
+}
+
+td > .delete:hover{
+    transition: 0.5s;
+    background-color: #FA7070;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}

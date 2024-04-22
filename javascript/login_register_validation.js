@@ -75,7 +75,7 @@ function validate_gender () {
  */
 function filter_cities() {
     $(document).ready(function() {
-        var filterValue = $("#cityFilter").val().toLowerCase(); // Get the filter value and convert it to lowercase
+        let filterValue = $("#cityFilter").val().toLowerCase(); // Get the filter value and convert it to lowercase
         $("#city").children().hide() // Hide all options initially
             .filter(function() {
                 return $(this).text().toLowerCase().startsWith(filterValue); // Filter options based on text content
@@ -110,9 +110,19 @@ function region_pick() {
     return true;
 }
 
+/**
+ * @return true - dacă toate datele AU fost corect introduse, putand
+ * sa se trimita datele a se procesa la nivel de server
+ * @return false - in caz contrar
+ */
 function validate_register(){
-    alert(validate_fname() && validate_lname() && validate_email() && validate_password()
-        && validate_gender() && region_pick() ?
-        "Inregistrarea s-a facut corespunzator!"
-        : "Nu s-au introdus corect toate datele!");
+    if(validate_fname() && validate_lname() && validate_email() && validate_password()
+        && validate_gender() && region_pick()) {
+        alert("Datele de inregistrare au fost trimise!");
+        return true;
+    }
+    else{
+        alert("Nu s-au introdus corect toate datele!");
+        return false;
+    }
 }

@@ -1,22 +1,34 @@
+<?php
+include_once 'php/Role.php';
+include_once 'php/pages_config.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/nav_links.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/nav_links.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>ToDoList</title>
 </head>
 
 <body>
     <nav>
             <ul>
-                <li><a class="active" href="home.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="about_owner.html">About owner</a></li>
+                <li><a class="active" href="home.php">Home</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="about_owner.php">About owner</a></li>
+                <?php
+                if(!empty($_SESSION['user_email']) && $_SESSION['user_email'] === Role::ADMIN_EMAIL) {
+                    echo "<script>$('nav li').css('width', '20%')</script>";
+                    echo "<li style='width: 20%'><a href='users.php'>Users page</a></li>";
+                }
+                ?>
             </ul>
     </nav>
 
@@ -63,6 +75,7 @@
     <footer>
         <p>Ownership: Dolha Raul</p>
         <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
+        <button id="logoutBtn"><a href="php/destroy_session.php">Logout</a></button>
     </footer>
     <script src="javascript/tasks_handling.js"></script>
 </body>

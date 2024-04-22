@@ -14,12 +14,32 @@ footer {
 
 footer p {
     font-family: Verdana, serif;
+    display: inline-block;
+    width: 30%;
     font-size: 1.35vw;
 }
 footer  a:link, a:visited, a:active{
     text-decoration: none;
+    color: black;
 }
 
 footer a:hover{
     color: whitesmoke;
+}
+
+footer button {
+    padding: 25px;
+    font-size: 200%;
+    text-align: center;
+    border-radius: 25px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer button:hover{
+    background-color: #FA7070;
+    transition: 0.5s;
 }

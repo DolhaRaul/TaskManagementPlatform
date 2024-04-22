@@ -1,3 +1,8 @@
+<?php
+include_once 'php/Role.php';
+include_once 'php/pages_config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,7 @@
     <link rel="stylesheet" href="css/nav_links.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
     <title>About</title>
@@ -14,10 +20,16 @@
 <body>
 <nav>
     <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a class="active" href="about_owner.html">About owner</a></li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+        <li><a class="active" href="about_owner.php">About owner</a></li>
+        <?php
+        if(!empty($_SESSION['user_email']) && $_SESSION['user_email'] === Role::ADMIN_EMAIL) {
+            echo "<script>$('nav li').css('width', '20%')</script>";
+            echo "<li style='width: 20%'><a href='users.php'>Users page</a></li>";
+        }
+        ?>
     </ul>
 </nav>
 
@@ -110,6 +122,7 @@
 <footer>
     <p>Ownership: Dolha Raul</p>
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
+    <button id="logoutBtn"><a href="php/destroy_session.php">Logout</a></button>
 </footer>
 
 <script src="javascript/profile_image_picker.js"></script>
@@ -117,14 +130,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function (){
-        sorting_by_headers();
-    })
-    document.addEventListener("DOMContentLoaded", function (){
         limit_profile_pictures();
     });
     document.addEventListener("DOMContentLoaded", function (){
         profile_picture_choose();
     })
 </script>
+
 </body>
 </html>
