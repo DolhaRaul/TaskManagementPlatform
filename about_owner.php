@@ -122,7 +122,12 @@ include_once 'php/pages_config.php';
 <footer>
     <p>Ownership: Dolha Raul</p>
     <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
-    <button id="logoutBtn"><a href="php/destroy_session.php">Logout</a></button>
+    <?php
+    if(!empty($_SESSION['user_email']))
+        echo "<button id='logoutBtn'><a href='php/destroy_session.php'>Logout</a></button>";
+    else
+        echo "<button id='logoutBtn'><a href='php/destroy_session.php'>Login</a></button>";
+    ?>
 </footer>
 
 <script src="javascript/profile_image_picker.js"></script>

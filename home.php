@@ -96,9 +96,14 @@ include 'php/DataBaseOperations.php'
     <footer>
         <p>Ownership: Dolha Raul</p>
         <p>Information contact: <a href="mailto:rauldolha2002@yahoo.com">rauldolha2002@yahoo.com</a></p>
-        <button id="logoutBtn"><a href="php/destroy_session.php">Logout</a></button>
+        <?php
+        if(!empty($_SESSION['user_email']))
+            echo "<button id='logoutBtn'><a href='php/destroy_session.php'>Logout</a></button>";
+        else
+            echo "<button id='logoutBtn'><a href='php/destroy_session.php'>Login</a></button>";
+        ?>
     </footer>
     <script src="javascript/tasks_handling.js"></script>
-    //<script>document.onload = function(){add_close_buttons();}</script>
+    <script>document.onload = function(){add_close_buttons();}</script>
 </body>
 </html>
