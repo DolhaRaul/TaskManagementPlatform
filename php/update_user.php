@@ -45,7 +45,7 @@ echo "<script>alert('Informatiile utilizatorului NU SE VOR automcompleta!')</scr
 <main>
     <div class="container">
         <h1>Update</h1>
-        <form method="POST" name="update_form" action="update.php">
+        <form method="POST" name="update_form" action="update_user.php">
             <label for="fname">Enter your first name: </label>
             <input type="text" id="fname"  name="fname" placeholder="Mihai"
             pattern="[a-zA-Z]+" required oninput="validate_fname()">

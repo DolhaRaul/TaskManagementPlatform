@@ -6,7 +6,7 @@ class DataBaseOperations{
     /**
      * Get database connection; We use Lazy Instantiation here!
      */
-    public static function getConnection() {
+    private static function getConnection() {
         if (self::$conn === null) {
             include_once 'DataBaseProperties.php';
             $servername = DataBaseProperties::SERVER_NAME;
@@ -59,7 +59,7 @@ class DataBaseOperations{
      * @param string $password - Parola pe care utilizatorul o da ca si input
      * @return bool - True DACA exista utilziatoru, false in caz contrar
      */
-    public static function getUser(string $email, string $password) : bool{
+    public static function verifyUser(string $email, string $password) : bool{
         $conn = self::getConnection();
         $sql = "SELECT email, password FROM Users WHERE email = ? AND password = ?";
         $stmt = $conn->prepare($sql);
@@ -79,6 +79,21 @@ class DataBaseOperations{
             echo "Error: " . $conn->error;
         }
         return false;
+    }
+
+    /**
+     * @param string $email - Email ul utilizatorului
+     * @return NULL | int -  Id ul utilizatorului de email dorit CE E UNIC DETERMINAT
+     * sau NULL de nu exista un utilizator de astfel de id
+     */
+    public static function getUserId(string $email) : NULL | int{
+        $conn = self::getConnection();
+        $sql = "SELECT Users.id FROM users WHERE users.email = '$email'";
+        $result = $conn -> query($sql);
+        if($result -> num_rows == 0)
+            return null;
+        $row = $result ->fetch_assoc();
+        return $row['id'];
     }
 
     /**
@@ -120,5 +135,56 @@ class DataBaseOperations{
         $conn = self::getConnection();
         $sql = "SELECT * FROM Users";
         return $conn->execute_query($sql);
+    }
+
+    /**
+     * @param string $email - Email ul utilizatorului, UNIC asociat
+     * @return string - Numele si prenumele utilizatorului, separare prin
+     * exact un spatiu
+     */
+    public static function getUsersName(string $email) : string{
+        $conn = self::getConnection();
+        $sql = "SELECT firstName, lastName from USERS WHERE email = '$email'";
+        $result = $conn -> query($sql);
+        if($result -> num_rows > 0){
+            $row = $result ->fetch_assoc();
+            return $row['firstName'] . " " . $row['lastName'];
+        }
+        return "User not found!";
+    }
+
+    /**
+     * @param string $email - Email ul utilizatorului
+     * @return mysqli_result - Lista de task uri pe care utilizatorul si le
+     * propus a le face; Utilizatorul este unic identificat de email(si de id)
+     */
+    public static function getTasksForUser(string $email) : mysqli_result{
+        $conn = self::getConnection();
+        $sql = "SELECT * FROM tasksforusers WHERE tasksforusers.user_id IN
+                                  (SELECT id FROM users WHERE email = '$email')";
+        return $conn -> query($sql);
+    }
+
+    /**
+     * @param int $id - Id ul task ului!
+     * @return bool - True daca task ul s-a sters cu succes, False in
+     * caz contrar
+     */
+    public static function deleteTask(int $id) : bool{
+        $conn = self::getConnection();
+        $sql = "DELETE FROM tasksforusers WHERE tasksforusers.id = $id";
+        return $conn -> query($sql);
+    }
+
+    /**
+     * @param string $task_info - Detaliile task ului, task ul in sine!
+     * @param int $user_id - Id ul utilizatorului pentru care adaugam task ul
+     * @return bool - True daca task ul s-a creat, False in caz contrar!
+     */
+    public static function createTask(string $task_info, int $user_id) : bool{
+        $conn = self::getConnection();
+        $sql = "INSERT INTO tasksforusers (info, user_id) 
+                VALUES('$task_info', $user_id)";
+        return $conn -> query($sql);
     }
 }
