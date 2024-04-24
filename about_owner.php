@@ -67,7 +67,7 @@ include_once 'php/pages_config.php';
             </div>
         </div>
         <div class="aboutUs">
-            <p style="display: inline-block">Pick search type here(default is case insensitive): </p>
+            <p style="display: inline-block">Pick search type here(default is case sensitive): </p>
             <input class="searchStyle" id="searchSensitive" type="radio"
                    value="case_sensitive" name="searchType">
             <label for="searchSensitive">Case Sensitive</label>
