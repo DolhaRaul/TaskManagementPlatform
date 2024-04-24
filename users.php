@@ -65,8 +65,8 @@ include_once 'php/pages_config.php'
                         echo "<td>" .$row['role'] . "</td>";
                     echo "<td>" .$row['gender'] . "</td>";
                     echo "<td>" .$row['city'] . "</td>";
-                    echo "<td><button class='update'><a href='php/update.php?updatedid=" . $row['id'] . "'>Update user</a></button></td>";
-                    echo "<td><button class='delete'><a href='php/delete.php?deletedid=" . $row['id'] . "'>Delete user</a></button></td>";
+                    echo "<td><button class='update'><a href='php/update_user.php?updatedid=" . $row['id'] . "'>Update user</a></button></td>";
+                    echo "<td><button class='delete'><a href='php/delete_user.php?deletedid=" . $row['id'] . "'>Delete user</a></button></td>";
                     echo "</tr>";
                 }
             }
