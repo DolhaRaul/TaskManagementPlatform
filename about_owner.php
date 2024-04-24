@@ -53,6 +53,18 @@ include_once 'php/pages_config.php';
     <div id="mainContent">
         <div class="aboutUs">
             <h1 id="contentSpecifier">About owner</h1>
+            <img id="myImg" src="images/Imagine_owner.jpg" alt="Imagine de profil" style="width:100%;max-width:100px">
+            <div id="myModal" class="modal">
+
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
+        </div>
         </div>
         <div class="aboutUs">
             <p style="display: inline-block">Pick search type here(default is case insensitive): </p>
@@ -139,6 +151,9 @@ include_once 'php/pages_config.php';
     });
     document.addEventListener("DOMContentLoaded", function (){
         profile_picture_choose();
+    });
+    document.addEventListener("DOMContentLoaded", function (){
+        display_modal_image();
     })
 </script>
 
