@@ -24,8 +24,13 @@ function add_delete_button(liItem){
     close_button.className = "delete";
     liItem.appendChild(close_button);
 }
+/**
+ * Vrem sa ne aasiguram ca pentru toate it emele de tipul li(MAI PUTIN cele
+ * din bara de navigatie, deci cele care contin <a> link uri catre alte
+ * pagini) apelam functia add_delete_button
+ */
 function add_close_buttons() {
-    let liItems = document.querySelectorAll("li");
+    let liItems = document.querySelectorAll("li:not(:has(a))");
     let arrayOfLiItems = [...liItems];
     arrayOfLiItems.forEach(liItem => add_delete_button(liItem));
 }
