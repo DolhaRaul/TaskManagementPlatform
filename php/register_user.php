@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once 'DataBaseProperties.php';
 include_once 'DataBaseOperations.php';
 $firstName = $lastName = $email = $password = $gender = $city = NULL;
@@ -15,7 +14,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 $status = DataBaseOperations::createUser($firstName , $lastName, $email, $password, $gender, $city);
 
 if ($status === true) {
-    $_SESSION['user_email'] = $email;
     echo "<script>alert('Utilizatorul a fost creat cu succes!')</script>";
     echo "<script>window.location.href = '../home.css/login.php'</script>";
 } else {
