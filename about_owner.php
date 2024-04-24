@@ -64,7 +64,7 @@ include_once 'php/pages_config.php';
 
                 <!-- Modal Caption (Image Text) -->
                 <div id="caption"></div>
-        </div>
+            </div>
         </div>
         <div class="aboutUs">
             <p style="display: inline-block">Pick search type here(default is case insensitive): </p>
