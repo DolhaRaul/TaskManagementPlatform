@@ -67,16 +67,21 @@ include_once 'php/pages_config.php';
             </div>
         </div>
         <div class="aboutUs">
-            <p style="display: inline-block">Pick search type here(default is case sensitive): </p>
-            <input class="searchStyle" id="searchSensitive" type="radio"
-                   value="case_sensitive" name="searchType">
-            <label for="searchSensitive">Case Sensitive</label>
-            <input class="searchStyle" id="searchInsensitive" type="radio" value="case_insensitive"
-                   name="searchType">
-            <label for="searchInsensitive">Case Insensitive</label>
+            <span style="display: inline-block">Pick search type here(default is case sensitive) </span>
+                <div>
+                <input class="searchStyle" id="searchSensitive" type="radio"
+                       value="case_sensitive" name="searchType">
+                <label for="searchSensitive">Case Sensitive</label>
+                <input class="searchStyle" id="searchInsensitive" type="radio" value="case_insensitive"
+                       name="searchType">
+                <label for="searchInsensitive">Case Insensitive</label>
+                </div>
+                <br>
+            <div>
+                <label for="textToFind">Enter text to search here</label> <br>
+                <input id="textToFind" type="text" onkeyup="text_search()" placeholder="Text to find...">
+            </div>
             <br>
-            <label for="textToFind">Enter text to search here</label> <br>
-            <input id="textToFind" type="text" onkeyup="text_search()" placeholder="Text to find...">
             <table id="contentAboutOwner">
                 <tr>
                     <th>FirstName</th>

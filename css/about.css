@@ -14,6 +14,7 @@ main {
    flex: 1;
 }
 
+
 #profileSection {
     background-color: #b5b3ba;
     width: 100%;
@@ -78,7 +79,7 @@ label {
 }
 
 label > .searchStyle {
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .searchStyle + label{
@@ -96,6 +97,9 @@ label > .searchStyle {
     font-weight: bold;
 }
 
+span {
+    margin-left: 35px;
+}
 input {
     background-color: #dad9db;
     margin-top: 10px;
