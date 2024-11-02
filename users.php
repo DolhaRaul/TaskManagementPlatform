@@ -28,7 +28,7 @@ include_once 'php/pages_config.php'
         <?php
         if(!empty($_SESSION['user_email']) && $_SESSION['user_email'] === Role::ADMIN_EMAIL) {
             echo "<script>$('nav li').css('width', '20%')</script>";
-            echo "<li class='active' style='background-color: lightgreen; width: 20%'><a href='users.php'>Users page</a></li>";
+            echo "<li class='active' style='background-color: #97dcf7; width: 20%'><a href='users.php'>Users page</a></li>";
         }
         ?>
     </ul>

@@ -28,5 +28,5 @@ nav li a:hover:not(.active){
 }
 
 li a.active {
-    background-color: lightgreen;
+    background-color: #97dcf7;
 }
