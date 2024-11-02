@@ -16,13 +16,14 @@ Although interactions are possible, login is required in order for them to be fu
 
 ***Note*** The current page that the user is currently on is higlighted in green, in the navigation bar. Also, the *Logged In / Logged Out status* is infered by the *Login / LogOut button*, in the LoginPage. 
 
-![Imagine1_TMP_Editetd](https://github.com/user-attachments/assets/c76fbf81-de5f-4db2-a129-7fd32779312a)
+![image](https://github.com/user-attachments/assets/62169da8-1739-494e-9a26-a9c5aeafae7e)
 <div align="center">
   <strong> Login is required</strong> in order to access the functionalities.
 </div>
 <br>
 
-![image](https://github.com/user-attachments/assets/854ec22a-89ef-46f2-9b78-916cb21fb8ff)
+![Imagine2_Edited](https://github.com/user-attachments/assets/9e4cd1b2-da18-4cd0-a582-b3a970c737bf)
+
 <div align="center">
   <strong>Ways</strong> to access the LogIn Page.
 </div>
@@ -43,6 +44,23 @@ In the **Register Page** all fields are mandatory, each following specific patte
 **Register** may fail if and only if there already exists a user with the specific email (this being unique per person), the user being alerted such is the case. 
 
 After the **Register** is successfully finished, the user is alerted and before being automatically redirected to the **LoginPage**, where the scenario has been previously  explained.
+
+# Additional features
+1. The _About Owner Page_ presents extra information regarding the site owner, stored in a table, that the user may
+   user view / filter / order / etc, in order to better search personal data of him (these **features** will prove deem themselves even more useful when more personal data will be added in the future )
+2. The _About Owner Page_ offers "Profile Image Picker" functionality, from a gamma of predefined profile pictures.
+3. **Important**: Personal info of already existing accounts may modified solely by the admin itself, the user with the following credentials(these are not important credentials, solely for testing purposes):
+   - Email: rauldolha2002@yahoo.com
+   - Password:raul1234
+  The **Admin User** has the capability of altering user's accounts (if needed, *evev* permanently deleting their accounts) through the **Users' Page**. Here, the user's credentials
+  are changed by the admin through a new form, similar to the one in the **Register Page**
+![image](https://github.com/user-attachments/assets/ebebc23f-115b-42e9-ae75-75b6ba424d44)
+4. Alert functionalities regarding user's tasks status (whether he has tasks left to complete, related tasks, etc)
+5. (*Future imporvements will be added*) A tracking functionality that counts how many users from each Country are out there, using the app. There are also features like filtering / ordering / etc for these
+   tracking functionality.
+6. (*Future improvements will be added*). Gamma of profile picture enlarger: Users can add multiple profile pictures to match their preferences.
+   
+
 
 
 
