@@ -97,6 +97,7 @@ label > .searchStyle {
 }
 
 input {
+    background-color: #dad9db;
     margin-top: 10px;
     margin-left: 35px;
 }
@@ -104,7 +105,7 @@ table{
     overflow: scroll;
 }
 td, th {
-    background-color: white;
+    background-color: #b5b3ba;
     border-collapse: collapse;
     text-align: center;
     height: 30px;
